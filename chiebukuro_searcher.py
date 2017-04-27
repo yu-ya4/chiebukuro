@@ -41,10 +41,22 @@ class ChiebukuroSearcher:
             questionのlist
             json形式
         '''
-        json = {"size": size,"query":{"query_string":{"query": query, "fields" : fields}}}
 
-        res = self.es.search(index=self.index, doc_type='questions', body=json)
+        start = 0
+        interval = 1000
+        result = []
+        while start < size:
+            if size < interval:
+                interval = size
 
-        questions = res['hits']['hits']
+            json = {"from": start, "size": interval,"query":{"query_string":{"query": query, "fields" : fields}}}
+            res = self.es.search(index=self.index, doc_type='questions', body=json)
+            questions = res['hits']['hits']
+            # if there is no result, break the loop
+            if not questions:
+                break
 
-        return questions
+            result.extend(questions)
+            start += interval
+
+        return result
