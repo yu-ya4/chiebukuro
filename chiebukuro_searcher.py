@@ -24,3 +24,27 @@ class ChiebukuroSearcher:
     @property
     def index(self):
         return self.__index
+
+    def search_questions_by(self, query, size, fields):
+        '''
+        search for questions and get json response
+
+        Args:
+            query: str
+                検索クエリ
+            size: int
+                取得する検索結果数
+            fields: list[str]
+                検索対象にするフィールドの名称からなるリスト
+        Returns:
+            list[dict[str, str or int]]
+            questionのlist
+            json形式
+        '''
+        json = {"size": size,"query":{"query_string":{"query": query, "fields" : fields}}}
+
+        res = self.es.search(index=self.index, doc_type='questions', body=json)
+
+        questions = res['hits']['hits']
+
+        return questions
