@@ -16,7 +16,7 @@ class ChiebukuroAnalyzer():
         self.matcher = CaboChaMatcher()
         self.text = text
 
-    def extract_modifiers(self, target):
+    def extract_modifiers(self, target, pattern_file):
         '''
         extract modifiers to the target
 
@@ -25,6 +25,23 @@ class ChiebukuroAnalyzer():
         '''
 
         sentences = self.extract_sentences(target)
+        results = []
+
+        with open(pattern_file) as f:
+            pat = f.read()
+            pattern = self.matcher.parse_pat(pat)
+
+            for sentence in sentences:
+                sen = self.matcher.parse(sentence)
+                matched = self.matcher.match(sen, pattern)
+                if matched != None:
+                    for m in matched:
+                        if m != None:
+                            for modifier in m:
+                                results.append(modifier[0].dictform)
+
+
+        return results
 
     def extract_sentences(self, target):
         '''
