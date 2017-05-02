@@ -7,12 +7,13 @@ from chiebukuro_analyzer import ChiebukuroAnalyzer
 if __name__ == '__main__':
     cs = ChiebukuroSearcher('192.168.1.50', 'chiebukuro')
     # questions = cs.search_questions_by('\"飲める\" && \"場所\"', 1000000000000, ['title', 'body'])
-    questions = cs.search_questions_by('\"飲む\"', 1000000000000, ['title', 'body'])
+    questions = cs.search_questions_by('\"飲める\"', 1000000000000, ['title', 'body'])
     all_text = ''
     for question in questions:
         all_text += question['_source']['title'] + question['_source']['body']
-    print(len(questions))
-
+    # print(len(questions))
+    # all_text = '今日はいい天気だ．飲める？カウンター付きのバーでビールが飲める．ちょっと友達と飲める．楽しいきゅうじつだ。明日からりょこうでうす！￥'
     ca = ChiebukuroAnalyzer(all_text)
-    modifiers = ca.extract_modifiers('飲む', './pattern/nomu.txt')
+    # ca.extract_modifiers('飲める', './pattern')
+    modifiers = ca.extract_modifiers('飲める', './pattern')
     print(modifiers)
