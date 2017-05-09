@@ -15,5 +15,8 @@ if __name__ == '__main__':
     # all_text = '今日はいい天気だ．飲める？カウンター付きのバーでビールが飲める．ちょっと友達と飲める．楽しいきゅうじつだ。明日からりょこうでうす！￥'
     ca = ChiebukuroAnalyzer(all_text)
     # ca.extract_modifiers('飲める', './pattern')
-    modifiers = ca.extract_modifiers('飲める', './pattern')
-    print(modifiers)
+    # modifiers = ca.extract_modifiers('飲める', './pattern')
+    # print(modifiers)
+
+    modifiers_frequences = ca.get_modifiers_frequences('飲める', './pattern')
+    print(modifiers_frequences)

@@ -57,6 +57,35 @@ class ChiebukuroAnalyzer():
 
         return results
 
+    def get_modifiers_frequences(self, target, pattern_dir):
+        '''
+        get modifiers frequences got by extract_modifiers()
+
+        Args:
+            target: str
+                extract modifiers to this target
+            pattern_dir: str
+                read pattern files from this directory
+        Returns:
+            dict{str: int}
+                ex. {'カウンターで': 1, 'ちょこっと': 2, 'ゆっくり': 18}
+        '''
+
+        modifiers = self.extract_modifiers(target, pattern_dir)
+        modifiers_frequences = {}
+
+        for modifier_list in modifiers:
+            modifier = ''
+            for m in modifier_list:
+                modifier += m
+
+            if modifier not in modifiers_frequences:
+                modifiers_frequences[modifier] = 1
+            else:
+                modifiers_frequences[modifier] += 1
+
+        return modifiers_frequences
+
     def extract_sentences(self, target):
         '''
         記号で区切り， 対象を含む文章を抽出
