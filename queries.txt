@@ -1,0 +1,164 @@
+curl -XGET '192.168.1.50:9200/chiebukuro/questions/_search?pretty' -d'
+{
+    "size":20,
+    "query":{"match":{"category_path":">教養と学問、サイエンス>言葉、語学>ドイツ語"}}
+}'
+
+
+curl -XGET '192.168.1.50:9200/chiebukuro/questions/_search?pretty' -d'
+{
+    "query":{"match":{"category":"お酒、ドリンク"}}
+}'
+
+227841
+
+curl -XGET '192.168.1.50:9200/chiebukuro/questions/_search?pretty' -d'
+{
+    "query":{"match":{"category":"飲食店"}}
+}'
+
+233547
+
+}, {
+   "_index" : "chiebukuro",
+   "_type" : "questions",
+   "_id" : "1092877810",
+   "_score" : 3.9032056,
+   "_source" : {
+     "comment_date" : "0000-00-00 00:00:00",
+     "answer_request_number" : 0,
+     "title" : "こんにちは",
+     "comment" : "",
+     "answer_request_target" : "",
+     "img_flg" : true,
+     "question_status" : 27,
+     "answer_count" : 2,
+     "device" : "PC",
+     "suggested_category" : false,
+     "supplement_date" : "0000-00-00 00:00:00",
+     "supplement" : "",
+     "user_id" : "af6e874784014eb09eccdfaef8abac0818efb53d",
+     "category" : "ショッピング",
+     "coin" : 0,
+     "submitted_date" : "2012-08-24 03:27:40",
+     "solved_date" : "2012-09-08 03:01:04",
+     "body" : "こんにちは",
+     "question_id" : 1092877810,
+     "category_path" : ">暮らしと生活ガイド>ショッピング",
+     "useful_flg" : true
+   }
+ }, {
+   "_index" : "chiebukuro",
+   "_type" : "questions",
+   "_id" : "12101894652",
+   "_score" : 3.9032056,
+   "_source" : {
+     "comment_date" : "2013-02-17 16:07:33",
+     "answer_request_number" : 0,
+     "title" : "アムウェイをやっている人達がよく言う ゛ハロートーク゛って何ですか？  ハロートークが上手く出来なかったとか、ハロートークで感動したとか、ハロートークは思った事を伝えればいいとか…",
+     "comment" : "ありがとうございました",
+     "answer_request_target" : "",
+     "img_flg" : true,
+     "question_status" : 25,
+     "answer_count" : 1,
+     "device" : "スマホ",
+     "suggested_category" : true,
+     "supplement_date" : "0000-00-00 00:00:00",
+     "supplement" : "",
+     "user_id" : "274a25a9b1026b4abdc2892585e59f50d4efe0dd",
+     "category" : "消費者問題",
+     "coin" : 100,
+     "submitted_date" : "2013-02-12 00:33:26",
+     "solved_date" : "2013-02-17 16:07:33",
+     "body" : "こんにちは話？",
+     "question_id" : 12101894652,
+     "category_path" : ">暮らしと生活ガイド>法律、消費者問題>消費者問題",
+     "useful_flg" : true
+   }
+ }, {
+   "_index" : "chiebukuro",
+   "_type" : "questions",
+   "_id" : "14121733809",
+   "_score" : 3.9032056,
+   "_source" : {
+     "comment_date" : "0000-00-00 00:00:00",
+     "answer_request_number" : 0,
+     "title" : "こんにちは",
+     "comment" : "",
+     "answer_request_target" : "",
+     "img_flg" : true,
+     "question_status" : 27,
+     "answer_count" : 1,
+     "device" : "PC",
+     "suggested_category" : true,
+     "supplement_date" : "0000-00-00 00:00:00",
+     "supplement" : "",
+     "user_id" : "06d3a7d70f4b168150681c2403fa3de119798cac",
+     "category" : "ドイツ語",
+     "coin" : 0,
+     "submitted_date" : "2014-02-28 13:44:05",
+     "solved_date" : "2014-03-15 08:10:33",
+     "body" : "こんにちは。",
+     "question_id" : 14121733809,
+     "category_path" : ">教養と学問、サイエンス>言葉、語学>ドイツ語",
+     "useful_flg" : true
+   }
+ }, {
+   "_index" : "chiebukuro",
+   "_type" : "questions",
+   "_id" : "14122266119",
+   "_score" : 3.9032056,
+   "_source" : {
+     "comment_date" : "2014-03-10 19:32:23",
+     "answer_request_number" : 0,
+     "title" : "こんにちは",
+     "comment" : "ひまなう",
+     "answer_request_target" : "",
+     "img_flg" : true,
+     "question_status" : 25,
+     "answer_count" : 2,
+     "device" : "PC",
+     "suggested_category" : true,
+     "supplement_date" : "0000-00-00 00:00:00",
+     "supplement" : "",
+     "user_id" : "69c7a7caf324b4861a4b836bd02e5eaf45badb6b",
+     "category" : "ドイツ語",
+     "coin" : 500,
+     "submitted_date" : "2014-03-10 19:24:28",
+     "solved_date" : "2014-03-10 19:32:23",
+     "body" : "こんにちは",
+     "question_id" : 14122266119,
+     "category_path" : ">教養と学問、サイエンス>言葉、語学>ドイツ語",
+     "useful_flg" : true
+   }
+ }, {
+   "_index" : "chiebukuro",
+   "_type" : "questions",
+   "_id" : "1124522991",
+   "_score" : 3.9030576,
+   "_source" : {
+     "comment_date" : "0000-00-00 00:00:00",
+     "answer_request_number" : 0,
+     "title" : "yamadakun52",
+     "comment" : "",
+     "answer_request_target" : "",
+     "img_flg" : true,
+     "question_status" : 25,
+     "answer_count" : 1,
+     "device" : "PC",
+     "suggested_category" : true,
+     "supplement_date" : "0000-00-00 00:00:00",
+     "supplement" : "",
+     "user_id" : "788ed68a7cf35e7d334b253b61e9026efbafe388",
+     "category" : "アニメ、コミック",
+     "coin" : 500,
+     "submitted_date" : "2009-03-25 17:32:53",
+     "solved_date" : "2009-03-25 17:40:11",
+     "body" : "こんにちは",
+     "question_id" : 1124522991,
+     "category_path" : ">エンターテインメントと趣味>アニメ、コミック",
+     "useful_flg" : true
+   }
+ } ]
+}
+}
